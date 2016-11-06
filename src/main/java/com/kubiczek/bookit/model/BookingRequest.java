@@ -14,6 +14,7 @@ public class BookingRequest {
     private final Duration meetingDuration;
 
     public BookingRequest(LocalDateTime submissionTime, String employeeId, LocalDateTime meetingStartTime, Duration meetingDuration) {
+        assert meetingDuration.toMillis() > 0;
         this.submissionTime = submissionTime;
         this.employeeId = employeeId;
         this.meetingStartTime = meetingStartTime;

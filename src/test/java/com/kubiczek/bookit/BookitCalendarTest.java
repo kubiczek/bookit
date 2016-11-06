@@ -66,4 +66,14 @@ public class BookitCalendarTest {
         assertThat(thrown).isInstanceOf(BookitException.class);
         assertThat(thrown).hasMessageStartingWith("Booking request falls outside of the office hours");
     }
+
+    @Test
+    public void shouldThrowException_whenOfficeHoursStartIsAfterEnd() {
+        // when
+        Throwable thrown = catchThrowable(() ->
+                new BookitCalendar(LocalTime.of(9, 0), LocalTime.of(8, 0))
+        );
+        // then
+        assertThat(thrown).isInstanceOf(AssertionError.class);
+    }
 }

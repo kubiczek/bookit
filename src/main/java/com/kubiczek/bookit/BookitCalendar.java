@@ -17,6 +17,7 @@ public class BookitCalendar {
     private Map<LocalDate, Set<BookingRequest>> calendar = new HashMap<>();
 
     public BookitCalendar(LocalTime officeHoursStart, LocalTime officeHoursEnd) {
+        assert officeHoursStart.isBefore(officeHoursEnd);
         this.officeHoursStart = officeHoursStart;
         this.officeHoursEnd = officeHoursEnd;
     }

@@ -7,4 +7,8 @@ public class BookitException extends RuntimeException {
     public BookitException(String message) {
         super(message);
     }
+
+    public BookitException(String message, Exception e) {
+        super(message, e);
+    }
 }
