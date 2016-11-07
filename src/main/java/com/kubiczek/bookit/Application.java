@@ -40,6 +40,7 @@ public class Application {
 
             File outFile = new File(args[1]);
             try (Writer out = new FileWriter(outFile)) {
+                log.info("Writing the calendar to the file: {}", outFile.getAbsolutePath());
                 out.write(calendar.toString());
             }
         };
